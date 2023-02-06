@@ -1,0 +1,26 @@
+<html>
+<head>
+	<title>Even Number Generator</title>
+</head>
+<body>
+	<form>
+		Start: <input type="text" name="start">
+		End: <input type="text" name="end">
+		<input type="button" onclick="generateEvenNums()" value="Generate Even Numbers">
+	</form>
+	<script>
+		function generateEvenNums() {
+			let start = document.querySelector('input[name=start]').value;
+			let end = document.querySelector('input[name=end]').value;
+			let evenNums = "";
+
+			for (let i = start; i <= end; i++) {
+				if (i % 2 == 0) {
+					evenNums += i + " "; 
+				}
+			}
+			alert(evenNums);
+		}
+	</script>
+</body>
+</html>
