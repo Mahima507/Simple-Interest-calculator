@@ -1,0 +1,55 @@
+<html>
+   <head>
+      <title>Simple Interest Calculator</title>
+      <script>
+         function calculateInterest() {
+            var amount = document.getElementById("amount").value;
+            var rate = document.getElementById("rate").value;
+            var time = document.getElementById("time").value;
+            var interest;
+ 
+            if(isNaN(amount) || amount=="" || amount<=0){
+               alert("Please enter a valid amount!");
+               return;
+            }
+            if(isNaN(rate) || rate=="" || rate<=0 || rate>100){
+               alert("Please enter a valid rate of interest!");
+               return;
+            }
+            if(isNaN(time) || time=="" || time<=0 || time>15){
+               alert("Please enter a valid time!");
+               return;
+            }
+ 
+            interest = (amount * rate * time) / 100;
+            document.getElementById("interest").value = interest;
+         }
+      </script>
+   </head>
+   <body>
+      <form>
+         <table>
+            <tr>
+               <td>Amount:</td>
+               <td><input type="text" id="amount"/></td>
+            </tr>
+            <tr>
+               <td>Rate of Interest:</td>
+               <td><input type="text" id="rate"/></td>
+            </tr>
+            <tr>
+               <td>Time (in years):</td>
+               <td><input type="text" id="time"/></td>
+            </tr>
+            <tr>
+               <td>Interest:</td>
+               <td><input type="text" id="interest" readonly/></td>
+            </tr>
+            <tr>
+               <td></td>
+               <td><input type="button" value="Calculate" onclick="calculateInterest()"/></td>
+            </tr>
+         </table>
+      </form>
+   </body>
+</html>
